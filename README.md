@@ -1,2 +1,4 @@
-# cv_maker
-Simple Web Based Website For CV Making
+# CV Maker
+## Built By Haikal
+
+A Simple Web Based App For Creating Beautifull CV
