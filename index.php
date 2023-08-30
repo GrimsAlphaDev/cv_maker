@@ -85,12 +85,12 @@
                                 <div class="col-6">
                                     <!-- posisi -->
                                     <label for="posisi" class="form-label">Posisi</label>
-                                    <input type="text" class="form-control" id="posisi" name="posisi" required />
+                                    <input type="text" class="form-control" id="posisi" name="posisi[]" required />
                                 </div>
                                 <div class="col-6">
                                     <!-- nama perusahaan -->
                                     <label for="namaPerusahaan" class="form-label">Nama Perusahaan</label>
-                                    <input type="text" class="form-control" id="namaPerusahaan" name="namaPerusahaan" required />
+                                    <input type="text" class="form-control" id="namaPerusahaan" name="namaPerusahaan[]" required />
                                 </div>
                             </div>
                         </div>
@@ -101,12 +101,12 @@
                                 <div class="col-6">
                                     <!-- dari -->
                                     <label for="dari" class="form-label">Dari</label>
-                                    <input type="month" class="form-control" id="dari" name="dari" required />
+                                    <input type="month" class="form-control" id="dari" name="dari[]" required />
                                 </div>
                                 <div class="col-6">
                                     <!-- sampai -->
                                     <label for="sampai" class="form-label">Sampai</label>
-                                    <input type="month" class="form-control" id="sampai" name="sampai" required max="<?php
+                                    <input type="month" class="form-control" id="sampai" name="sampai[]" required max="<?php
                                                                                                                         $date = date('Y-m');
                                                                                                                         echo $date;
                                                                                                                         ?>" />
@@ -183,7 +183,7 @@
                                 <div class="col-6">
                                     <!-- organisasi -->
                                     <label for="organisasi" class="form-label">Organisasi</label>
-                                    <input type="text" class="form-control" id="organisasi[]" name="organisasi" required />
+                                    <input type="text" class="form-control" id="organisasi" name="organisasi[]" required />
                                 </div>
                             </div>
                         </div>
@@ -283,7 +283,7 @@
                         <!-- jobdesk -->
                         <h6 class="mb-1">Jobdesk</h6>
                         <div class="mb-3">
-                            <input type="text" class="form-control mb-2" id="jobdesk2" name="jobdesk[]" required />
+                            <input type="text" class="form-control mb-2" id="jobdesk2" name="jobdesk2[]" required />
                             <input class="form-check-input" type="checkbox" id="addMoreJobdesk2">Tambah Jobdesk</input>                                
                             <div id="addJobdesk2">
                             </div>
@@ -439,12 +439,12 @@
                                 <div class="col-6">
                                     <!-- jabatan -->
                                     <label for="jabatan" class="form-label">Jabatan</label>
-                                    <input type="text" class="form-control" id="jabatan" name="jabatan[]" required />
+                                    <input type="text" class="form-control" id="jabatan" name="jabatan2[]" required />
                                 </div>
                                 <div class="col-6">
                                     <!-- organisasi -->
                                     <label for="organisasi"class="form-label">Organisasi</label>
-                                    <input type="text" class="form-control" id="organisasi" name="organisasi[]" required />
+                                    <input type="text" class="form-control" id="organisasi" name="organisasi2[]" required />
                                 </div>
                             </div>
                         </div>
@@ -455,12 +455,12 @@
                                 <div class="col-6">
                                     <!-- dari -->
                                     <label for="dari" class="form-label">Dari</label>
-                                    <input type="month" class="form-control" id="dari" name="dariOrganisasi[]" required />
+                                    <input type="month" class="form-control" id="dari" name="dariOrganisasi2[]" required />
                                 </div>
                                 <div class="col-6">
                                     <!-- sampai -->
                                     <label for="sampai" class="form-label">Sampai</label>
-                                    <input type="month" class="form-control" id="sampai" name="sampaiOrganisasi[]" required max="<?php
+                                    <input type="month" class="form-control" id="sampai" name="sampaiOrganisasi2[]" required max="<?php
                                                                                                                                     $date = date('Y-m');
                                                                                                                                     echo $date;
                                                                                                                                     ?>" />
@@ -470,7 +470,7 @@
                         <!-- jobdesk -->
                         <h6 class="mb-1">Jobdesk</h6>
                         <div class="mb-3">
-                            <input type="text" class="form-control mb-2" id="jobdeskOrganisasi" name="jobdeskOrganisasi[]" required />
+                            <input type="text" class="form-control mb-2" id="jobdeskOrganisasi" name="jobdeskOrganisasi2[]" required />
                             <input class="form-check-input" type="checkbox" id="addMoreJobdeskOrganisasi2"> Tambah Jobdesk</input>
                             <div id="addJobdeskOrganisasi2">
                             </div>
@@ -485,7 +485,7 @@
                     // if addMoreJobdeskOrganisasi2 is checked, add 1 more jobdesk
                     if (addMoreJobdeskOrganisasi2.checked) {
                         addJobdeskOrganisasi2.innerHTML = `
-                    <input type="text" class="form-control mb-1 mt-2" id="jobdeskOrganisasi" name="jobdeskOrganisasi[]" required />
+                    <input type="text" class="form-control mb-1 mt-2" id="jobdeskOrganisasi" name="jobdeskOrganisasi2[]" required />
                 `;
                     } else {
                         addJobdeskOrganisasi2.innerHTML = "";
@@ -497,29 +497,6 @@
             }
         });
 
-
-        // JavaScript code to handle form submission and displaying CV result
-        // const form = document.querySelector("form");
-        // const cvResult = document.getElementById("cv-result");
-
-        // form.addEventListener("submit", function (event) {
-        //     event.preventDefault(); // Prevent form submission
-
-        //     // Fetch form values and create CV content
-        //     const name = document.getElementById("name").value;
-        //     const email = document.getElementById("email").value;
-        //     const phone = document.getElementById("phone").value;
-
-        //     const cvContent = `
-        //             <p><strong>Name:</strong> ${name}</p>
-        //             <p><strong>Email:</strong> ${email}</p>
-        //             <p><strong>Phone:</strong> ${phone}</p>
-        //             <!-- Add more content here as needed -->
-        //         `;
-
-        // Display CV content in the result div
-        // cvResult.innerHTML = cvContent;
-        // });
     </script>
 </body>
 
